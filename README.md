@@ -45,9 +45,7 @@ ensure qb-fuel
 
 Main config file:
 
-```text
-C:\Users\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\Config.lua
-```
+
 
 Important values:
 
@@ -85,16 +83,11 @@ Example:
 
 NUI files:
 
-```text
-C:\Users\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\html\index.html
-C:\Users\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\html\style.css
-C:\Users\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\html\app.js
-```
+
 
 Vehicle images:
 
-```text
-C:\Users\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\html\assets\vehicles
+
 ```
 
 The client sends the current vehicle model to NUI as `imageModel`. The UI then tries to load:
@@ -178,18 +171,10 @@ This resource validates:
 
 
 
-### Vehicle image is missing
 
-Add the image here:
 
 
 
 File name should match the lower-case vehicle display model, for example:
-
-```text
-rhapsody.png
-baller4.png
-adder.png
-```
 
 
