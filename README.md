@@ -177,33 +177,8 @@ This resource validates:
 - Payment method is limited to `bank` or configured cash type.
 - Player has enough money before fuel is applied.
 
-Important files:
 
-```text
-C:\Users\Admin\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\client\main.lua
-C:\Users\Admin\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\server\main.lua
-```
 
-## Optimization Notes
-
-- No constant `0ms` NUI loops are used.
-- The UI updates from NUI messages and pointer input only.
-- Nozzle rope distance checks run every `500ms`.
-- Nozzle attached cleanup checks run every `1000ms`.
-- Blips are cleared on unload/resource stop to avoid duplicates.
-- Target setup is guarded to avoid duplicated target registration after repeated init.
-
-## Troubleshooting
-
-### UI does not open
-
-Check:
-
-```text
-ensure qb-core
-ensure qb-target
-ensure qb-fuel
-```
 
 Also confirm `qb-fuel` is running:
 
@@ -216,9 +191,7 @@ restart qb-fuel
 
 Add the image here:
 
-```text
-C:\Users\Admin\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\html\assets\vehicles
-```
+
 
 File name should match the lower-case vehicle display model, for example:
 
@@ -228,36 +201,4 @@ baller4.png
 adder.png
 ```
 
-### Slider starts from the wrong position
 
-Restart the resource to clear old NUI cache:
-
-```text
-restart qb-fuel
-```
-
-If it still shows old CSS/JS, relog or restart the server.
-
-### Purchase does nothing
-
-Check:
-
-- Vehicle has nozzle attached.
-- Vehicle is not already full.
-- Selected litre amount is greater than `0`.
-- Player has enough cash/bank balance.
-- Server console has no Lua errors.
-
-## Development Preview
-
-For local UI preview, a temporary browser preview can be served from:
-
-```text
-http://127.0.0.1:51873/preview-browser.html
-```
-
-This preview is for visual testing only. The real FiveM NUI page is:
-
-```text
-html/index.html
-```
