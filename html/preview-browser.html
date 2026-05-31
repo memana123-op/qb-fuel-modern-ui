@@ -1,0 +1,205 @@
+﻿<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <script type="module" src="translations.js"></script>
+        <script type="module" src="app.js"></script>
+        <title>QBCore Fuel</title>
+    </head>
+    <body>
+        <main class="fuel-shell" aria-label="Fuel system purchase panel">
+            <div class="fuel-window">
+            <header class="fuel-topbar">
+                <div class="brand-lockup">
+                    <span class="brand-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false">
+                            <path d="M7 21V5.5A2.5 2.5 0 0 1 9.5 3h5A2.5 2.5 0 0 1 17 5.5V21" />
+                            <path d="M9 8h6" />
+                            <path d="M17 8h1.3c.9 0 1.7.7 1.7 1.7v6.8c0 .8-.7 1.5-1.5 1.5S17 17.3 17 16.5V13" />
+                            <path d="M20 10.5l-2-2" />
+                        </svg>
+                    </span>
+                    <h1>Fuel System</h1>
+                </div>
+                <div class="system-status">
+                    <span id="fuel-date">Nov. 15</span>
+                    <span id="fuel-time">14:42 PM</span>
+                    <span class="signal" aria-hidden="true"><i></i><i></i><i></i></span>
+                    <span>100%</span>
+                    <span class="battery" aria-hidden="true"></span>
+                </div>
+            </header>
+
+            <section class="fuel-layout">
+                <aside class="vehicle-panel" aria-label="Vehicle fuel status">
+                    <div class="vehicle-meta">
+                        <p>MODEL: <strong id="vehicle-model">BALLER4</strong></p>
+                        <span>YOUR CAR PLATE: <strong id="vehicle-plate">45WDM340</strong></span>
+                    </div>
+
+                    <div class="vehicle-stage" aria-hidden="true">
+                        <img id="vehicle-image" class="vehicle-image" src="assets/vehicles/baller4.png" alt="" />
+                        <div class="stage-arc"></div>
+                    </div>
+
+                    <div class="gauge-wrap">
+                        <div class="fuel-gauge progress" data-value="0" data-max="100" data-min="0" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                            <svg viewBox="0 0 140 140" focusable="false">
+                                <circle class="gauge-track" cx="70" cy="70" r="58"></circle>
+                                <circle class="gauge-fill" cx="70" cy="70" r="58"></circle>
+                            </svg>
+                            <div class="gauge-center">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M4 13c3.2-4.6 6.4-4.6 9.6 0" />
+                                    <path d="M13.6 13c.7-1.4 1.5-2.2 2.4-2.4 1.4-.2 2.5.9 2.5 2.3 0 2-2 3.5-4.9 4.4" />
+                                    <path d="M7.5 13.2c1.5.5 3 .5 4.5 0" />
+                                </svg>
+                                <strong id="fuel-percent">0%</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vehicle-stats">
+                        <div class="stat">
+                            <span class="stat-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" focusable="false">
+                                    <path d="M14 4a2 2 0 0 0-4 0v8.3a5 5 0 1 0 4 0V4z" />
+                                    <path d="M12 16v-5" />
+                                </svg>
+                            </span>
+                            <small>TEMP</small>
+                            <strong><span id="engine-temp">96</span>C</strong>
+                        </div>
+                        <span class="stat-divider" aria-hidden="true"></span>
+                        <div class="stat">
+                            <span class="stat-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" focusable="false">
+                                    <path d="M4 16a8 8 0 1 1 16 0" />
+                                    <path d="M12 16l4-4" />
+                                    <path d="M7 16h10" />
+                                </svg>
+                            </span>
+                            <small>SPEED</small>
+                            <strong><span id="vehicle-speed">135</span> KMH</strong>
+                        </div>
+                    </div>
+                </aside>
+
+                <section class="purchase-panel" aria-label="Fuel purchase controls">
+                    <h2>FUEL TYPE</h2>
+
+                    <form aria-label="Fuel purchase form">
+                        <div class="fuel-grid" role="radiogroup" aria-label="Fuel type and amount presets">
+                            <button class="fuel-card active" type="button" data-fuel-type="diesel" data-price-multiplier="1" data-fill="70">
+                                <span class="card-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" focusable="false">
+                                        <path d="M8 20V6.5A2.5 2.5 0 0 1 10.5 4h4A2.5 2.5 0 0 1 17 6.5V20" />
+                                        <path d="M10 9h5" />
+                                        <path d="M17 8.5h1.2c.8 0 1.5.7 1.5 1.5v5.5c0 .7-.6 1.3-1.3 1.3S17 16.2 17 15.5V13" />
+                                    </svg>
+                                </span>
+                                <span class="price"><span data-rate>10</span>$ / LITER</span>
+                                <span class="type">DIESEL</span>
+                                <span class="fuel-slider"><i></i></span>
+                            </button>
+
+                            <button class="fuel-card economic" type="button" data-fuel-type="economic" data-price-multiplier="2" data-fill="38">
+                                <span class="card-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" focusable="false">
+                                        <path d="M8 20V6.5A2.5 2.5 0 0 1 10.5 4h4A2.5 2.5 0 0 1 17 6.5V20" />
+                                        <path d="M10 9h5" />
+                                        <path d="M17 8.5h1.2c.8 0 1.5.7 1.5 1.5v5.5c0 .7-.6 1.3-1.3 1.3S17 16.2 17 15.5V13" />
+                                    </svg>
+                                </span>
+                                <span class="price"><span data-rate>20</span>$ / LITER</span>
+                                <span class="type">ECONOMIC</span>
+                                <span class="fuel-slider"><i></i></span>
+                            </button>
+
+                            <button class="fuel-card super" type="button" data-fuel-type="super" data-price-multiplier="3" data-fill="52">
+                                <span class="card-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" focusable="false">
+                                        <path d="M8 20V6.5A2.5 2.5 0 0 1 10.5 4h4A2.5 2.5 0 0 1 17 6.5V20" />
+                                        <path d="M10 9h5" />
+                                        <path d="M17 8.5h1.2c.8 0 1.5.7 1.5 1.5v5.5c0 .7-.6 1.3-1.3 1.3S17 16.2 17 15.5V13" />
+                                    </svg>
+                                </span>
+                                <span class="price"><span data-rate>30</span>$ / LITER</span>
+                                <span class="type">SUPER</span>
+                                <span class="fuel-slider"><i></i></span>
+                            </button>
+
+                            <button class="fuel-card super-plus" type="button" data-fuel-type="super-plus" data-price-multiplier="2" data-fill="44">
+                                <span class="card-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" focusable="false">
+                                        <path d="M8 20V6.5A2.5 2.5 0 0 1 10.5 4h4A2.5 2.5 0 0 1 17 6.5V20" />
+                                        <path d="M10 9h5" />
+                                        <path d="M17 8.5h1.2c.8 0 1.5.7 1.5 1.5v5.5c0 .7-.6 1.3-1.3 1.3S17 16.2 17 15.5V13" />
+                                    </svg>
+                                </span>
+                                <span class="price"><span data-rate>20</span>$ / LITER</span>
+                                <span class="type">SUPER +</span>
+                                <span class="fuel-slider"><i></i></span>
+                            </button>
+                        </div>
+
+                        <div class="manual-controls">
+                            <label for="liter">Liters</label>
+                            <input min="0" max="50" step="1" type="number" id="liter" name="liter" value="0" placeholder="0" />
+                            <label for="price">Price</label>
+                            <input min="0" step="1" type="number" id="price" name="price" value="0" placeholder="0" />
+                        </div>
+
+                        <footer class="payment-bar">
+                            <div class="total-box">
+                                <small>TOTAL PRICE FOR</small>
+                                <strong>$ <span id="total-price">0</span></strong>
+                            </div>
+                            <div class="payment-method">
+                                <small>PAYMENT METHOD</small>
+                                <div class="method-toggle" aria-label="Payment method">
+                                    <button type="button" class="method active" data-method="cash" aria-label="Cash payment">
+                                        <svg viewBox="0 0 24 24" focusable="false">
+                                            <path d="M4 8h16v10H4z" />
+                                            <path d="M7 12h4" />
+                                            <path d="M17 14h.01" />
+                                        </svg>
+                                    </button>
+                                    <button type="button" class="method" data-method="bank" aria-label="Bank payment">
+                                        <svg viewBox="0 0 24 24" focusable="false">
+                                            <path d="M4 10l8-5 8 5" />
+                                            <path d="M6 10v8" />
+                                            <path d="M10 10v8" />
+                                            <path d="M14 10v8" />
+                                            <path d="M18 10v8" />
+                                            <path d="M4 18h16" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="purchase-box">
+                                <small>PAYMENT BUTTON</small>
+                                <button class="purchase-button" type="submit">PURCHASE</button>
+                            </div>
+                        </footer>
+                    </form>
+                </section>
+            </section>
+            </div>
+        </main>
+            <script type="module">
+            setTimeout(() => {
+                window.postMessage({
+                    action: "show",
+                    price: 10,
+                    fuelTypes: { diesel: 1, economic: 2, super: 3, "super-plus": 2 },
+                    currentFuel: 100,
+                    vehicle: { model: "RHAPSODY", imageModel: "rhapsody", plate: "OMU840TS", speed: 0, engineTemperature: 53 }
+                }, "*");
+            }, 450);
+        </script>
+    </body>
+</html>
+
