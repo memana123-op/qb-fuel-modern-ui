@@ -2,11 +2,6 @@
 
 Modern QBCore fuel system for FiveM with a redesigned NUI fuel purchase panel, nozzle-based pump flow, vehicle fuel syncing, jerry can support, and LegacyFuel-compatible exports.
 
-Resource path:
-
-```text
-C:\Users\Admin\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel
-```
 
 ## Features
 
