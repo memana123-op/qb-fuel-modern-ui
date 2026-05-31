@@ -44,7 +44,7 @@ ensure qb-fuel
 Main config file:
 
 ```text
-C:\Users\Admin\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\Config.lua
+C:\Users\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\Config.lua
 ```
 
 Important values:
@@ -84,15 +84,15 @@ Example:
 NUI files:
 
 ```text
-C:\Users\Admin\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\html\index.html
-C:\Users\Admin\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\html\style.css
-C:\Users\Admin\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\html\app.js
+C:\Users\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\html\index.html
+C:\Users\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\html\style.css
+C:\Users\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\html\app.js
 ```
 
 Vehicle images:
 
 ```text
-C:\Users\Admin\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\html\assets\vehicles
+C:\Users\FXServer\txData\QBCore_18885C.base\resources\[qb]\qb-fuel\html\assets\vehicles
 ```
 
 The client sends the current vehicle model to NUI as `imageModel`. The UI then tries to load:
