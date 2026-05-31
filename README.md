@@ -1,4 +1,7 @@
-# qb-fuel
+# qb-fuel modern ui
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2cfdc9f8-f780-48ac-84d1-1a548053f6f8" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/730a2221-9812-4556-954a-df5ad781a39e" />
+
 
 Modern QBCore fuel system for FiveM with a redesigned NUI fuel purchase panel, nozzle-based pump flow, vehicle fuel syncing, jerry can support, and LegacyFuel-compatible exports.
 
@@ -29,7 +32,6 @@ qb-core
 qb-target
 ```
 
-Make sure `qb-core` starts before `qb-fuel`.
 
 Recommended `server.cfg` order:
 
@@ -175,12 +177,6 @@ This resource validates:
 
 
 
-Also confirm `qb-fuel` is running:
-
-```text
-refresh
-restart qb-fuel
-```
 
 ### Vehicle image is missing
 
